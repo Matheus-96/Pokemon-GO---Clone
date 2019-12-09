@@ -27,10 +27,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         if contador < 3 {
-            if let coordenadas = gerenciadorLocalizacao.location?.coordinate {
-                let regiao = MKCoordinateRegion.init(center: coordenadas, latitudinalMeters: 200, longitudinalMeters: 200)
-                mapa.setRegion(regiao, animated: true)
-            }
+            centralizar()
             contador += 1
         } else {
             gerenciadorLocalizacao.stopUpdatingLocation()
@@ -52,5 +49,19 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                present(alertController, animated: true, completion: nil)
            }
        }
+    
+    func centralizar() {
+        if let coordenadas = gerenciadorLocalizacao.location?.coordinate {
+            let regiao = MKCoordinateRegion.init(center: coordenadas, latitudinalMeters: 200, longitudinalMeters: 200)
+            mapa.setRegion(regiao, animated: true)
+        }
+    }
+    
+    @IBAction func centralizaarJogador(_ sender: Any) {
+        centralizar()
+    }
+    
+    @IBAction func abrirPokedex(_ sender: Any) {
+    }
 }
 

@@ -15,16 +15,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QTf-s2-SdD">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QTf-s2-SdD">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hk-eN-yDw">
+                                <rect key="frame" x="354" y="64" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="E0k-qY-VXw"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="eDB-ch-nEz"/>
+                                </constraints>
+                                <state key="normal" image="compass"/>
+                                <connections>
+                                    <action selector="centralizaarJogador:" destination="BYZ-38-t0r" eventType="touchUpInside" id="05h-pV-Sw9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8I-V7-pbX">
+                                <rect key="frame" x="182" y="826" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ELI-FM-Y06"/>
+                                    <constraint firstAttribute="width" constant="50" id="JTq-8e-AA3"/>
+                                </constraints>
+                                <state key="normal" image="pokeball"/>
+                                <connections>
+                                    <action selector="abrirPokedex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YNh-0h-fFc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="QTf-s2-SdD" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Gz7-8Y-LkA"/>
-                            <constraint firstItem="QTf-s2-SdD" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="IAa-VQ-Qqv"/>
-                            <constraint firstAttribute="bottom" secondItem="QTf-s2-SdD" secondAttribute="bottom" id="dnJ-L8-qEv"/>
-                            <constraint firstItem="QTf-s2-SdD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="twP-dl-q8l"/>
+                            <constraint firstItem="4hk-eN-yDw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="8BY-3f-Dru"/>
+                            <constraint firstItem="d8I-V7-pbX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RKO-0h-vBy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4hk-eN-yDw" secondAttribute="trailing" constant="10" id="cU5-0S-oLl"/>
+                            <constraint firstAttribute="bottom" secondItem="d8I-V7-pbX" secondAttribute="bottom" constant="20" id="fpE-ip-XxE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -37,4 +60,8 @@
             <point key="canvasLocation" x="131.8840579710145" y="119.86607142857142"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="compass" width="40" height="40"/>
+        <image name="pokeball" width="40" height="40"/>
+    </resources>
 </document>
