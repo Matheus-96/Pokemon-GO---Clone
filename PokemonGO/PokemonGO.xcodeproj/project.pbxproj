@@ -15,6 +15,8 @@
 		0A0320CB239E8FEA004B416F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A0320CA239E8FEA004B416F /* Assets.xcassets */; };
 		0A0320CE239E8FEA004B416F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A0320CC239E8FEA004B416F /* LaunchScreen.storyboard */; };
 		0A0320D7239E903B004B416F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A0320D6239E903B004B416F /* MapKit.framework */; };
+		0A0320D9239EBAAE004B416F /* CoreDataPokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0320D8239EBAAE004B416F /* CoreDataPokemon.swift */; };
+		0A0320DB239ECFE3004B416F /* PokemonAnotacao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0320DA239ECFE3004B416F /* PokemonAnotacao.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		0A0320CD239E8FEA004B416F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A0320CF239E8FEA004B416F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A0320D6239E903B004B416F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		0A0320D8239EBAAE004B416F /* CoreDataPokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataPokemon.swift; sourceTree = "<group>"; };
+		0A0320DA239ECFE3004B416F /* PokemonAnotacao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAnotacao.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,8 @@
 				0A0320BE239E8FE5004B416F /* AppDelegate.swift */,
 				0A0320C0239E8FE5004B416F /* SceneDelegate.swift */,
 				0A0320C2239E8FE5004B416F /* ViewController.swift */,
+				0A0320D8239EBAAE004B416F /* CoreDataPokemon.swift */,
+				0A0320DA239ECFE3004B416F /* PokemonAnotacao.swift */,
 				0A0320C4239E8FE5004B416F /* Main.storyboard */,
 				0A0320CA239E8FEA004B416F /* Assets.xcassets */,
 				0A0320CC239E8FEA004B416F /* LaunchScreen.storyboard */,
@@ -156,7 +162,9 @@
 				0A0320C3239E8FE5004B416F /* ViewController.swift in Sources */,
 				0A0320C9239E8FE5004B416F /* PokemonGO.xcdatamodeld in Sources */,
 				0A0320BF239E8FE5004B416F /* AppDelegate.swift in Sources */,
+				0A0320DB239ECFE3004B416F /* PokemonAnotacao.swift in Sources */,
 				0A0320C1239E8FE5004B416F /* SceneDelegate.swift in Sources */,
+				0A0320D9239EBAAE004B416F /* CoreDataPokemon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

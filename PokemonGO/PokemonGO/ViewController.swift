@@ -14,6 +14,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     @IBOutlet weak var mapa: MKMapView!
     var gerenciadorLocalizacao = CLLocationManager()
     var contador = 0
+    var coreDataPokemon: CoreDataPokemon!
+    var pokemons:[Pokemon] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,11 +24,24 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         gerenciadorLocalizacao.requestWhenInUseAuthorization()
         gerenciadorLocalizacao.startUpdatingLocation()
         
+        //recuperar pokemons
+        self.coreDataPokemon = CoreDataPokemon()
+        self.pokemons = self.coreDataPokemon.recuperarTodosPokemons()
+        
         //exibir pokemons
         Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { (timer) in
-            print("exibe anotacao")
+
+            
+    
             if let coordenadas = self.gerenciadorLocalizacao.location?.coordinate {
-                let anotacao = MKPointAnnotation()
+                
+                let totalPokemons = UInt32(self.pokemons.count)
+                let indicePokemonAleatorio = arc4random_uniform(totalPokemons)
+                
+                let pokemon = self.pokemons[ Int(indicePokemonAleatorio) ]
+                
+                let anotacao = PokemonAnotacao(coordenadas: coordenadas, pokemon: pokemon)
+                
                 let latAleatoria = (Double(arc4random_uniform(400)) - 200) / 100000.0
                 let lonAleatoria = (Double(arc4random_uniform(400)) - 200) / 100000.0
                 anotacao.coordinate = coordenadas
@@ -37,6 +52,26 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             }
         }
     }
+    // exibir anotacoes como imagens
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        // esse método é chamado sempre que uma anotacao é criada
+        
+        let anotacaoView = MKAnnotationView(annotation: annotation, reuseIdentifier: nil)
+        
+        if annotation is MKUserLocation {
+            anotacaoView.image = UIImage(named: "player")
+        } else {
+            let pokemon = (annotation as! PokemonAnotacao).pokemon
+            anotacaoView.image = UIImage(named: pokemon.nomeImagem!)
+        }
+        var frame = anotacaoView.frame
+        frame.size.height = 40
+        frame.size.width = 40
+        anotacaoView.frame = frame
+        
+        return anotacaoView
+    }
+    
 
     // centralizar a localizacao do usuário
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
