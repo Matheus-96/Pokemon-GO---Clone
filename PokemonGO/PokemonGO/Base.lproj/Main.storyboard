@@ -39,6 +39,7 @@
                                 <state key="normal" image="pokeball"/>
                                 <connections>
                                     <action selector="abrirPokedex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YNh-0h-fFc"/>
+                                    <segue destination="5LY-EK-dtG" kind="presentation" id="DSS-DI-he0"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -59,9 +60,60 @@
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="119.86607142857142"/>
         </scene>
+        <!--Poke Agenda View Controller-->
+        <scene sceneID="Bsb-ED-r9n">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="5LY-EK-dtG" customClass="PokeAgendaViewController" customModule="PokemonGO" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ssf-EU-MX8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vNa-xT-C9a">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="l3N-Oe-Clj">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="l3N-Oe-Clj" id="qAy-tE-Qix">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vl7-oX-Q5L">
+                                <rect key="frame" x="182" y="802" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="0e8-E7-sPy"/>
+                                    <constraint firstAttribute="width" constant="50" id="myx-Tl-kvh"/>
+                                </constraints>
+                                <state key="normal" image="map"/>
+                                <connections>
+                                    <action selector="voltarMapa:" destination="5LY-EK-dtG" eventType="touchUpInside" id="z27-S3-zoS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="vNa-xT-C9a" firstAttribute="leading" secondItem="yQ8-lF-c3e" secondAttribute="leading" id="2Tl-Mm-grp"/>
+                            <constraint firstItem="yQ8-lF-c3e" firstAttribute="bottom" secondItem="vNa-xT-C9a" secondAttribute="bottom" id="6ZU-xR-Qod"/>
+                            <constraint firstItem="Vl7-oX-Q5L" firstAttribute="centerX" secondItem="ssf-EU-MX8" secondAttribute="centerX" id="7Bd-tX-ab5"/>
+                            <constraint firstItem="vNa-xT-C9a" firstAttribute="top" secondItem="yQ8-lF-c3e" secondAttribute="top" id="A8i-ZO-2rC"/>
+                            <constraint firstItem="yQ8-lF-c3e" firstAttribute="bottom" secondItem="Vl7-oX-Q5L" secondAttribute="bottom" constant="10" id="lcG-vd-ekf"/>
+                            <constraint firstItem="yQ8-lF-c3e" firstAttribute="trailing" secondItem="vNa-xT-C9a" secondAttribute="trailing" id="nNA-bo-JQX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="yQ8-lF-c3e"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gFF-HZ-6YP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1074" y="120"/>
+        </scene>
     </scenes>
     <resources>
         <image name="compass" width="40" height="40"/>
+        <image name="map" width="40" height="40"/>
         <image name="pokeball" width="40" height="40"/>
     </resources>
 </document>

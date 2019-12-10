@@ -17,6 +17,7 @@
 		0A0320D7239E903B004B416F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A0320D6239E903B004B416F /* MapKit.framework */; };
 		0A0320D9239EBAAE004B416F /* CoreDataPokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0320D8239EBAAE004B416F /* CoreDataPokemon.swift */; };
 		0A0320DB239ECFE3004B416F /* PokemonAnotacao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0320DA239ECFE3004B416F /* PokemonAnotacao.swift */; };
+		0A0320DD239ED3B2004B416F /* PokeAgendaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0320DC239ED3B2004B416F /* PokeAgendaViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		0A0320D6239E903B004B416F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		0A0320D8239EBAAE004B416F /* CoreDataPokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataPokemon.swift; sourceTree = "<group>"; };
 		0A0320DA239ECFE3004B416F /* PokemonAnotacao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAnotacao.swift; sourceTree = "<group>"; };
+		0A0320DC239ED3B2004B416F /* PokeAgendaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeAgendaViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				0A0320BE239E8FE5004B416F /* AppDelegate.swift */,
 				0A0320C0239E8FE5004B416F /* SceneDelegate.swift */,
 				0A0320C2239E8FE5004B416F /* ViewController.swift */,
+				0A0320DC239ED3B2004B416F /* PokeAgendaViewController.swift */,
 				0A0320D8239EBAAE004B416F /* CoreDataPokemon.swift */,
 				0A0320DA239ECFE3004B416F /* PokemonAnotacao.swift */,
 				0A0320C4239E8FE5004B416F /* Main.storyboard */,
@@ -161,6 +164,7 @@
 			files = (
 				0A0320C3239E8FE5004B416F /* ViewController.swift in Sources */,
 				0A0320C9239E8FE5004B416F /* PokemonGO.xcdatamodeld in Sources */,
+				0A0320DD239ED3B2004B416F /* PokeAgendaViewController.swift in Sources */,
 				0A0320BF239E8FE5004B416F /* AppDelegate.swift in Sources */,
 				0A0320DB239ECFE3004B416F /* PokemonAnotacao.swift in Sources */,
 				0A0320C1239E8FE5004B416F /* SceneDelegate.swift in Sources */,
