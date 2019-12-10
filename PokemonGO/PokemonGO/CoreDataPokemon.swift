@@ -70,6 +70,7 @@ class CoreDataPokemon {
         self.criarPokemon(nome: "Psyduck", nomeImagem: "psyduck", capturado: false)
         self.criarPokemon(nome: "Rattata", nomeImagem: "rattata", capturado: false)
         self.criarPokemon(nome: "Zubat", nomeImagem: "zubat", capturado: false)
+        self.criarPokemon(nome: "Snorlax", nomeImagem: "snorlax", capturado: false)
         
         do {
             try context.save()

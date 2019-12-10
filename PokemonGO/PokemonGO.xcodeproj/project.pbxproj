@@ -21,7 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0A0320BB239E8FE5004B416F /* PokemonGO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokemonGO.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A0320BB239E8FE5004B416F /* Pokemon GO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokemon GO.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A0320BE239E8FE5004B416F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A0320C0239E8FE5004B416F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0A0320C2239E8FE5004B416F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,7 +60,7 @@
 		0A0320BC239E8FE5004B416F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0A0320BB239E8FE5004B416F /* PokemonGO.app */,
+				0A0320BB239E8FE5004B416F /* Pokemon GO.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,7 +108,7 @@
 			);
 			name = PokemonGO;
 			productName = PokemonGO;
-			productReference = 0A0320BB239E8FE5004B416F /* PokemonGO.app */;
+			productReference = 0A0320BB239E8FE5004B416F /* Pokemon GO.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -319,7 +319,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cursoiOS11.PokemonGO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Pokemon GO";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -336,7 +336,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cursoiOS11.PokemonGO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Pokemon GO";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

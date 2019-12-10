@@ -31,8 +31,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         //exibir pokemons
         Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { (timer) in
 
-            
-    
             if let coordenadas = self.gerenciadorLocalizacao.location?.coordinate {
                 
                 let totalPokemons = UInt32(self.pokemons.count)
@@ -76,11 +74,37 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         let anotacao = view.annotation
         let pokemon = (view.annotation as! PokemonAnotacao).pokemon
+        
         mapView.deselectAnnotation(anotacao, animated: true)
         if anotacao is MKUserLocation {
             return
         }
-        self.coreDataPokemon.salvarPokemon(pokemon: pokemon)
+        
+        if let coordAnotacao = anotacao?.coordinate {
+            let regiao = MKCoordinateRegion.init(center: coordAnotacao, latitudinalMeters: 200, longitudinalMeters: 200)
+            mapa.setRegion(regiao, animated: true)
+        }
+        
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (timer) in
+            if let coord = self.gerenciadorLocalizacao.location?.coordinate {
+                if self.mapa.visibleMapRect.contains(MKMapPoint(coord)) {
+                    self.coreDataPokemon.salvarPokemon(pokemon: pokemon)
+                    self.mapa.removeAnnotation(anotacao!)
+                    
+                    let alertController = UIAlertController(title: "Parabens!", message: "Você capturou o pokémon: \(pokemon.nome!)", preferredStyle: .alert)
+                    let ok = UIAlertAction(title: "ok", style: .default, handler: nil)
+                    alertController.addAction(ok)
+                    self.present(alertController, animated: true, completion: nil)
+                    
+                } else {
+                    let alertController = UIAlertController(title: "Você não pode capturar!", message: "Você precisa se aproximar mais para capturar o pokémon: \(pokemon.nome!)", preferredStyle: .alert)
+                    let ok = UIAlertAction(title: "ok", style: .default, handler: nil)
+                    alertController.addAction(ok)
+                    self.present(alertController, animated: true, completion: nil)
+                }
+            }
+        }
+        
         
     }
 
