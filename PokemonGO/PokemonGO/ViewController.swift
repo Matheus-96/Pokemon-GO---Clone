@@ -72,6 +72,17 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         return anotacaoView
     }
     
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        
+        let anotacao = view.annotation
+        let pokemon = (view.annotation as! PokemonAnotacao).pokemon
+        mapView.deselectAnnotation(anotacao, animated: true)
+        if anotacao is MKUserLocation {
+            return
+        }
+        self.coreDataPokemon.salvarPokemon(pokemon: pokemon)
+        
+    }
 
     // centralizar a localizacao do usuário
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -102,7 +113,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     func centralizar() {
         if let coordenadas = gerenciadorLocalizacao.location?.coordinate {
-            let regiao = MKCoordinateRegion.init(center: coordenadas, latitudinalMeters: 200, longitudinalMeters: 200)
+            let regiao = MKCoordinateRegion.init(center: coordenadas, latitudinalMeters: 300, longitudinalMeters: 300)
             mapa.setRegion(regiao, animated: true)
         }
     }
